@@ -34,6 +34,7 @@ mongoose.connection.on('error', (err) => {
 // Configure KOA framework
 const app = new Koa();
 app.name = 'Scraping challenge 2';
+app.proxy = true;
 
 
 if (config.debug) {
