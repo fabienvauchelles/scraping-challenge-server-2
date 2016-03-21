@@ -13,4 +13,12 @@ module.exports = {
         viewPath: `${__dirname}/app`,
         defaultLayout: 'index.tpl',
     },
+
+
+    antiscraping: {
+        cleaningDelay: 1000 * 10,
+
+        requestDelay: 1000,
+        requestDelayMax: 1000 * 32,
+    },
 };

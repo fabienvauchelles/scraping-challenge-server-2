@@ -113,7 +113,9 @@ function getRandomInt(max) {
 }
 
 function getRandom(arr) {
-    if (!arr || arr.length <= 0) return;
+    if (!arr || arr.length <= 0) {
+        return;
+    }
 
     const num = Math.floor(Math.random() * arr.length);
 

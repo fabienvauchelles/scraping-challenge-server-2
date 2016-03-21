@@ -4,11 +4,11 @@ const Person = require('../model/person.model'),
     Router = require('koa-router');
 
 
-module.exports = (config) => {
+module.exports = (config, antiscraping) => {
     const router = new Router();
 
     // One profile
-    router.get('/:id', function *() {
+    router.get('/:id', antiscraping.middleware(), function *() {
         const _id = this.params.id;
 
         const person = yield Person

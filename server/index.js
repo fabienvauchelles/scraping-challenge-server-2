@@ -2,7 +2,8 @@
  * MAIN: Configuration and main application
  */
 
-const bodyParser = require('koa-bodyparser'),
+const AntiScraping = require('./anti-scraping'),
+    bodyParser = require('koa-bodyparser'),
     compress = require('koa-compress'),
     errorHandler = require('koa-error'),
     hbs = require('koa-hbs'),
@@ -44,11 +45,17 @@ app.use(compress());
 app.use(bodyParser());
 app.use(hbs.middleware(config.template));
 
+
+// Anti Scraping
+const antiscraping = new AntiScraping(config.antiscraping);
+antiscraping.start();
+
+
 // Assets
 app.use(serve('assets'));
 
 // Define routes
-app.use(require('./app')(config));
+app.use(require('./app')(config, antiscraping));
 
 
 // Start server
