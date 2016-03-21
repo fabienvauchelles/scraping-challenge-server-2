@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="profile">
+        <div class="profile-info">
+            <div class="profile-info-avatar">
+                <img src="{{person.picture_url}}">
+            </div>
+
+            <div class="profile-info-header">
+                <div class="profile-info-name">{{person.firstname}} {{person.lastname}}</div>
+
+                <div class="profile-info-location">{{person.location}}</div>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-section-header">Experiences</div>
+
+            <div class="profile-section-body">
+                {{#each person.experiences}}
+                <div class="profile-moment">
+                    <div class="profile-moment-year">{{year}}</div>
+
+                    <div class="profile-moment-title">{{title}}</div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-section-header">Education</div>
+
+            <div class="profile-section-body">
+                {{#each person.educations}}
+                    <div class="profile-moment">
+                        <div class="profile-moment-year">{{year}}</div>
+
+                        <div class="profile-moment-title">{{title}}</div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-section-header">Tags</div>
+
+            <div class="profile-section-body profile-tags">
+                {{#each person.tags}}
+                    <div class="profile-tag">{{this}}</div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

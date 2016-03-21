@@ -1,0 +1,97 @@
+.profile {
+    $margin-size: 20px;
+
+    display: flex;
+    flex-flow: column;
+
+    .profile-info {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .profile-info-avatar {
+        display: flex;
+
+        border: 10px solid $white;
+
+        @include circle(200px);
+        @include card(1);
+
+        img {
+            width: 230px;
+            height: 100%;
+        }
+    }
+
+    .profile-info-header {
+        display: flex;
+        flex-flow: column;
+
+        margin-left: $margin-size;
+        margin-bottom: $margin-size;
+    }
+
+    .profile-info-name {
+        font-family: $header-font-family;
+        font-size: 50px;
+    }
+
+    .profile-info-location {
+    }
+
+    .profile-section {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .profile-section-header {
+        margin-top: 60px;
+        margin-bottom: $margin-size;
+
+        font-family: $header-font-family;
+        font-size: 35px;
+
+        border-bottom: 1px solid $grey-light2;
+    }
+
+    .profile-section-body {
+        display: flex;
+        flex-flow: column;
+
+        margin: 0 $margin-size;
+    }
+
+    .profile-moment {
+        display: flex;
+
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+
+    }
+
+    .profile-moment-year {
+    }
+
+    .profile-moment-title {
+        margin-left: $margin-size;
+    }
+
+    .profile-tags {
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+
+        margin: 0 $margin-size / 2;
+    }
+
+    .profile-tag {
+        line-height: 40px;
+
+        margin: 0 $margin-size / 2;
+
+        &:before {
+            content: '#';
+        }
+    }
+}

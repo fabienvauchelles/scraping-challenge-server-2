@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="profiles">
+        <div class="profiles-header">Profiles</div>
+
+        <div class="profiles-body">
+            {{#each persons}}
+            <div class="profile">
+                <a href="/{{_id}}">{{lastname}}, {{firstname}}</a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

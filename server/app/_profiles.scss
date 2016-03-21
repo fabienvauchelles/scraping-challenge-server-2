@@ -1,0 +1,28 @@
+.profiles {
+    .profiles-header {
+        margin-bottom: 20px;
+
+        font-family: $header-font-family;
+        font-size: 35px;
+
+        border-bottom: 1px solid $grey-light2;
+    }
+
+    .profile {
+        padding: 10px 5px;
+
+        transition-duration: $default-transition-duration;
+
+        a {
+            color: $grey-dark;
+        }
+
+        &:hover {
+            background: $grey-dark;
+
+            a {
+                color: $white;
+            }
+        }
+    }
+}
