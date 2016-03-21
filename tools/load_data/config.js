@@ -1,3 +1,3 @@
 module.exports = {
-    max: 1000,
+    max: 100,
 };
