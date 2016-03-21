@@ -1,7 +1,7 @@
 'use strict';
 
 
-module.exports = class AntiScraping {
+module.exports = class AntiScrapingDelay {
     constructor(config) {
         this._config = config;
 
@@ -20,6 +20,12 @@ module.exports = class AntiScraping {
         const self = this;
 
         return function *(next) {
+            if (self._config.inactive) {
+                yield next;
+                return;
+            }
+
+            // Check delay
             const ipName = this.request.ip;
 
             const nowInMs = new Date().getTime();
@@ -36,17 +42,17 @@ module.exports = class AntiScraping {
 
                 this.status = 503;
                 this.body = `You have to wait ${delay}ms for ip ${ipName}, mister scraper.`;
+                return;
             }
-            else {
-                ip = {
-                    count: 1,
-                    ts: nowInMs + self._config.requestDelay,
-                };
 
-                self._ips.set(ipName, ip);
+            ip = {
+                count: 1,
+                ts: nowInMs + self._config.requestDelay,
+            };
 
-                yield next;
-            }
+            self._ips.set(ipName, ip);
+
+            yield next;
         }
     }
 

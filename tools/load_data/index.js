@@ -43,7 +43,7 @@ Person.remove({}, (err) => {
 
     // Add insert new data
     const persons = [];
-    for (let i = 0; i < 10 * 1000; ++i) {
+    for (let i = 0; i < config.max; ++i) {
         persons.push(getRandomPerson());
     }
 

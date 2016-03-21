@@ -16,9 +16,16 @@ module.exports = {
 
 
     antiscraping: {
-        cleaningDelay: 1000 * 10,
+        ua: {
+            inactive: process.env.AS_DELAY_INACTIVE === 'true',
+        },
 
-        requestDelay: 1000,
-        requestDelayMax: 1000 * 32,
+        delay: {
+            inactive: process.env.AS_DELAY_INACTIVE === 'true',
+            cleaningDelay: parseInt(process.env.AS_DELAY_CLEANING_DELAY || '10000'),
+
+            requestDelay: parseInt(process.env.AS_DELAY_REQUEST_DELAY || '1000'),
+            requestDelayMax: parseInt(process.env.AS_DELAY_REQUEST_DELAY_MAX || '32000'),
+        },
     },
 };
