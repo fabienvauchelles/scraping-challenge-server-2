@@ -1,6 +1,6 @@
 'use strict';
 
-const uaRE = new RegExp('^mozilla', 'i');
+const uaRE = new RegExp('chrome', 'i');
 
 
 module.exports = class AntiScrapingUA {
