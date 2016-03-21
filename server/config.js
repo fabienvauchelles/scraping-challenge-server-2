@@ -17,7 +17,7 @@ module.exports = {
 
     antiscraping: {
         ua: {
-            inactive: process.env.AS_DELAY_INACTIVE === 'true',
+            inactive: process.env.AS_UA_INACTIVE === 'true',
         },
 
         delay: {
